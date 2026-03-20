@@ -9,7 +9,6 @@ class MatrixMath {
                 for (int k = 0; k < B.length; k++) C[i][j] += A[i][k] * B[k][j];
         return C;
     }
-
     // Transpone una matriz: Filas pasan a ser columnas
     public static double[][] transpose(double[][] m) {
         double[][] t = new double[m[0].length][m.length];
@@ -61,7 +60,7 @@ public class HandsOn3 {
                 {285.0}, {290.0}, {297.0}, {302.5}, {304.5}, {309.3}, {321.7}, {330.7}, {349.0}
         };
 
-        // --- CÁLCULO DE BETAS ---
+        // betas
         double[][] Xt = MatrixMath.transpose(X);
         double[][] XtX = MatrixMath.multiply(Xt, X);
         double[][] XtXInv = MatrixMath.invert(XtX);
@@ -77,6 +76,6 @@ public class HandsOn3 {
         // Ejemplo con x1=50, x2=30
         double x1 = 50.0, x2 = 30.0;
         double yield = betas[0][0] + (betas[1][0] * x1) + (betas[2][0] * x2);
-        System.out.printf("\nSimulación: Para x1=%.1f y x2=%.1f, el Yield es: %.2f\n", x1, x2, yield);
+        System.out.printf("\nSimulacion: Para x1=%.1f y x2=%.1f, el Yield es: %.2f\n", x1, x2, yield);
     }
 }
